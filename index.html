@@ -4,6 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vitalis — Soluções de IA para negócios</title>
+<meta name="description" content="Consultoria e engenharia de IA para negócios: chatbots, automação, análise de dados e produtos próprios como TalentIQ, Health Guard, SIGA-ICT e sistemas RAG.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vitalis — Soluções de IA para negócios">
+<meta property="og:description" content="Consultoria e engenharia de IA para negócios: chatbots, automação, análise de dados e produtos próprios como TalentIQ, Health Guard, SIGA-ICT e sistemas RAG.">
+<meta property="og:image" content="https://vitalis-landing-page.vercel.app/og-image.png">
+<meta property="og:url" content="https://vitalis-landing-page.vercel.app">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vitalis — Soluções de IA para negócios">
+<meta name="twitter:description" content="Consultoria e engenharia de IA para negócios: chatbots, automação, análise de dados e produtos próprios como TalentIQ, Health Guard, SIGA-ICT e sistemas RAG.">
+<meta name="twitter:image" content="https://vitalis-landing-page.vercel.app/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +103,19 @@
   }
   .navlinks a:hover { color: var(--ink); }
   .navlinks .cta { margin-left: 12px; }
+  .lang-toggle {
+    display: flex; align-items: center; gap: 6px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.03em;
+    margin-left: 4px;
+  }
+  .lang-btn {
+    background: none; border: none; cursor: pointer;
+    color: var(--ink-3); font: inherit; padding: 4px 2px;
+    transition: color .2s ease;
+  }
+  .lang-btn.active { color: var(--ink); font-weight: 700; }
+  .lang-btn:hover { color: var(--ink); }
+  .lang-sep { color: var(--line-strong); }
 
   /* ============ BUTTONS ============ */
   .btn {
@@ -786,12 +811,17 @@
       Vitalis
     </a>
     <div class="navlinks">
-      <a href="#about" class="navlink">Quem somos</a>
-      <a href="#services" class="navlink">Soluções</a>
-      <a href="#process" class="navlink">Processo</a>
-      <a href="#cases" class="navlink">Casos</a>
+      <a href="#about" class="navlink" data-i18n="nav-about">Quem somos</a>
+      <a href="#services" class="navlink" data-i18n="nav-services">Soluções</a>
+      <a href="#process" class="navlink" data-i18n="nav-process">Processo</a>
+      <a href="#cases" class="navlink" data-i18n="nav-cases">Casos</a>
       <a href="#faq" class="navlink">FAQ</a>
-      <a href="#contact" class="btn primary cta">Agendar demo →</a>
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn active" data-lang="pt">PT</button>
+        <span class="lang-sep">/</span>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="#contact" class="btn primary cta" data-i18n="nav-cta">Agendar demo →</a>
     </div>
   </div>
 </nav>
@@ -801,21 +831,21 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Vitalis · Soluções de IA</span>
-        <h1 class="hero-title">
+        <span class="eyebrow" data-i18n="hero-eyebrow">Vitalis · Soluções de IA</span>
+        <h1 class="hero-title" data-i18n="hero-title">
           Inteligência artificial que <em>trabalha</em> pelo seu negócio.
         </h1>
-        <p class="hero-sub">
+        <p class="hero-sub" data-i18n="hero-sub">
           Do SaaS sob medida à automação de processos: entregamos agentes, integrações e modelos que reduzem custo operacional e liberam seu time para o que importa.
         </p>
         <div class="hero-cta">
-          <a href="#contact" class="btn primary">
+          <a href="#contact" class="btn primary" data-i18n="btn-cta">
             Agendar demo
             <span class="arrow">→</span>
           </a>
           <a href="https://wa.me/258835160545" class="btn ghost">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            Falar no WhatsApp
+            <span data-i18n="hero-whatsapp-btn">Falar no WhatsApp</span>
           </a>
         </div>
       </div>
@@ -829,21 +859,21 @@
           </div>
           <div class="chat-row">
             <div class="chat-avatar">M</div>
-            <div class="chat-bubble">Meu pedido #48213 ainda não chegou.</div>
+            <div class="chat-bubble" data-i18n="chat-msg1">Meu pedido #48213 ainda não chegou.</div>
           </div>
           <div class="chat-row">
             <div class="chat-avatar ai">V</div>
-            <div class="chat-bubble ai">
+            <div class="chat-bubble ai" data-i18n="chat-msg2">
               Encontrei seu pedido. Saiu do CD em 11/jul e chega até quarta. Quer que eu acompanhe e te avise por WhatsApp?
             </div>
           </div>
           <div class="chat-row">
             <div class="chat-avatar">M</div>
-            <div class="chat-bubble">Sim, por favor.</div>
+            <div class="chat-bubble" data-i18n="chat-msg3">Sim, por favor.</div>
           </div>
           <div class="chat-row">
             <div class="chat-avatar ai">V</div>
-            <div class="chat-bubble ai">
+            <div class="chat-bubble ai" data-i18n="chat-msg4">
               Feito. Notificação criada. Mais alguma coisa?
             </div>
           </div>
@@ -865,20 +895,20 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">Quem somos</span>
-        <h2>IA construída por quem já <em>construiu</em> sistemas que importam.</h2>
+        <span class="eyebrow" data-i18n="about-eyebrow">Quem somos</span>
+        <h2 data-i18n="about-h2">IA construída por quem já <em>construiu</em> sistemas que importam.</h2>
       </div>
-      <p>A Vitalis nasceu de uma equipa que já liderou projectos grandes e complexos no mundo real, muito antes de trabalhar com IA. Hoje aplicamos essa mesma experiência prática para desenhar soluções de inteligência artificial que resolvem problemas de verdade — não apenas tecnologia por tecnologia, mas algo que funciona no dia a dia do seu negócio, seja qual for o seu sector.</p>
+      <p data-i18n="about-p">A Vitalis nasceu de uma equipa que já liderou projectos grandes e complexos no mundo real, muito antes de trabalhar com IA. Hoje aplicamos essa mesma experiência prática para desenhar soluções de inteligência artificial que resolvem problemas de verdade — não apenas tecnologia por tecnologia, mas algo que funciona no dia a dia do seu negócio, seja qual for o seu sector.</p>
     </div>
 
     <div class="about-grid">
       <div class="about-stat">
         <strong>25+</strong>
-        <span>anos de experiência a liderar equipas e projectos de grande escala</span>
+        <span data-i18n="about-stat1-label">anos de experiência a liderar equipas e projectos de grande escala</span>
       </div>
       <div class="about-stat">
         <strong>US$100M+</strong>
-        <span>geridos em programas internacionais, com responsabilidade directa pelos resultados</span>
+        <span data-i18n="about-stat2-label">geridos em programas internacionais, com responsabilidade directa pelos resultados</span>
       </div>
     </div>
   </div>
@@ -889,10 +919,10 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">Soluções</span>
-        <h2>Seis frentes, <em>um</em> parceiro.</h2>
+        <span class="eyebrow" data-i18n="services-eyebrow">Soluções</span>
+        <h2 data-i18n="services-h2">Seis frentes, <em>um</em> parceiro.</h2>
       </div>
-      <p>Combinamos consultoria, engenharia e produtos próprios para desenhar a solução certa — de um chatbot que atende milhares até um modelo customizado no seu dado privado.</p>
+      <p data-i18n="services-p">Combinamos consultoria, engenharia e produtos próprios para desenhar a solução certa — de um chatbot que atende milhares até um modelo customizado no seu dado privado.</p>
     </div>
 
     <div class="services-grid">
@@ -901,9 +931,8 @@
         <div class="svc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
-        <h3>Chatbots e agentes conversacionais</h3>
-        <p>Atendimento 24/7 em WhatsApp, site e app com fluxos que resolvem — não empurram para humano.</p>
-        <div class="svc-arrow">Saiba mais →</div>
+        <h3 data-i18n="svc1-title">Chatbots e agentes conversacionais</h3>
+        <p data-i18n="svc1-desc">Atendimento 24/7 em WhatsApp, site e app com fluxos que resolvem — não empurram para humano.</p>
       </div>
 
       <div class="svc">
@@ -911,9 +940,8 @@
         <div class="svc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
         </div>
-        <h3>Automação de processos (RPA + AI)</h3>
-        <p>Robôs inteligentes que leem documentos, preenchem sistemas e disparam ações — em minutos, sem intervenção.</p>
-        <div class="svc-arrow">Saiba mais →</div>
+        <h3 data-i18n="svc2-title">Automação de processos (RPA + AI)</h3>
+        <p data-i18n="svc2-desc">Robôs inteligentes que leem documentos, preenchem sistemas e disparam ações — em minutos, sem intervenção.</p>
       </div>
 
       <div class="svc">
@@ -921,9 +949,8 @@
         <div class="svc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
-        <h3>Análise de dados e BI com AI</h3>
-        <p>Dashboards que respondem em linguagem natural. Pergunte, descubra padrões, aja em cima do dado.</p>
-        <div class="svc-arrow">Saiba mais →</div>
+        <h3 data-i18n="svc3-title">Análise de dados e BI com AI</h3>
+        <p data-i18n="svc3-desc">Dashboards que respondem em linguagem natural. Pergunte, descubra padrões, aja em cima do dado.</p>
       </div>
 
       <div class="svc">
@@ -931,9 +958,8 @@
         <div class="svc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
-        <h3>Consultoria estratégica em AI</h3>
-        <p>Diagnóstico, roadmap e priorização. Onde IA gera resultado no seu negócio — e onde não gera.</p>
-        <div class="svc-arrow">Saiba mais →</div>
+        <h3 data-i18n="svc4-title">Consultoria estratégica em AI</h3>
+        <p data-i18n="svc4-desc">Diagnóstico, roadmap e priorização. Onde IA gera resultado no seu negócio — e onde não gera.</p>
       </div>
 
       <div class="svc">
@@ -941,9 +967,8 @@
         <div class="svc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
         </div>
-        <h3>Modelos customizados e fine-tuning</h3>
-        <p>Treinamos LLMs no seu dado privado, com controle de acesso, versionamento e avaliação contínua.</p>
-        <div class="svc-arrow">Saiba mais →</div>
+        <h3 data-i18n="svc5-title">Modelos customizados e fine-tuning</h3>
+        <p data-i18n="svc5-desc">Treinamos LLMs no seu dado privado, com controle de acesso, versionamento e avaliação contínua.</p>
       </div>
 
       <div class="svc">
@@ -951,9 +976,8 @@
         <div class="svc-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
-        <h3>Integrações com OpenAI, Anthropic e APIs</h3>
-        <p>Conectamos os melhores modelos ao seu stack — CRM, ERP, WhatsApp, Slack, o que precisar.</p>
-        <div class="svc-arrow">Saiba mais →</div>
+        <h3 data-i18n="svc6-title">Integrações com OpenAI, Anthropic e APIs</h3>
+        <p data-i18n="svc6-desc">Conectamos os melhores modelos ao seu stack — CRM, ERP, WhatsApp, Slack, o que precisar.</p>
       </div>
     </div>
   </div>
@@ -964,32 +988,32 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">Como funciona</span>
-        <h2>Do <em>diagnóstico</em> ao piloto em 30 dias.</h2>
+        <span class="eyebrow" data-i18n="process-eyebrow">Como funciona</span>
+        <h2 data-i18n="process-h2">Do <em>diagnóstico</em> ao piloto em 30 dias.</h2>
       </div>
-      <p>Método robusto e sem venda de fumaça. A gente só avança de fase quando a anterior gerou valor mensurável.</p>
+      <p data-i18n="process-p">Método robusto e sem venda de fumaça. A gente só avança de fase quando a anterior gerou valor mensurável.</p>
     </div>
 
     <div class="process-grid">
       <div class="step">
         <div class="step-num"></div>
-        <h4>Descoberta</h4>
-        <p>Uma semana. Mapeamos processos, dados disponíveis e onde IA gera ROI real — sem chumbinho.</p>
+        <h4 data-i18n="step1-title">Descoberta</h4>
+        <p data-i18n="step1-desc">Uma semana. Mapeamos processos, dados disponíveis e onde IA gera ROI real — sem chumbinho.</p>
       </div>
       <div class="step">
         <div class="step-num"></div>
-        <h4>Prova de valor</h4>
-        <p>Escolhemos um caso de uso. Entregamos um piloto funcional em duas a três semanas.</p>
+        <h4 data-i18n="step2-title">Prova de valor</h4>
+        <p data-i18n="step2-desc">Escolhemos um caso de uso. Entregamos um piloto funcional em duas a três semanas.</p>
       </div>
       <div class="step">
         <div class="step-num"></div>
-        <h4>Produção</h4>
-        <p>Integramos ao seu ambiente com observabilidade, controle de custo e políticas de dados.</p>
+        <h4 data-i18n="step3-title">Produção</h4>
+        <p data-i18n="step3-desc">Integramos ao seu ambiente com observabilidade, controle de custo e políticas de dados.</p>
       </div>
       <div class="step">
         <div class="step-num"></div>
-        <h4>Evolução</h4>
-        <p>Ciclos mensais de melhoria contínua. Novos casos entram no roadmap conforme o valor comprovado.</p>
+        <h4 data-i18n="step4-title">Evolução</h4>
+        <p data-i18n="step4-desc">Ciclos mensais de melhoria contínua. Novos casos entram no roadmap conforme o valor comprovado.</p>
       </div>
     </div>
   </div>
@@ -1000,47 +1024,47 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">Casos de uso</span>
-        <h2>Resultado, <em>não</em> hype.</h2>
+        <span class="eyebrow" data-i18n="cases-eyebrow">Casos de uso</span>
+        <h2 data-i18n="cases-h2">Resultado, <em>não</em> hype.</h2>
       </div>
-      <p>Três projetos recentes, três indústrias, uma coisa em comum: métrica de negócio antes e depois.</p>
+      <p data-i18n="cases-p">Quatro projetos reais, quatro áreas diferentes, uma coisa em comum: impacto de negócio que dá para mostrar.</p>
     </div>
 
     <div class="cases-grid">
       <div class="case">
-        <div class="case-tag">RH · Recrutamento e Gestão de Pessoas</div>
+        <div class="case-tag" data-i18n="case1-tag">RH · Recrutamento e Gestão de Pessoas</div>
         <div class="case-metric" style="font-size: 44px;"><em>TalentIQ</em></div>
-        <div class="case-metric-label">plataforma própria de recrutamento e gestão de RH</div>
-        <h4>TalentIQ — copiloto de recrutamento</h4>
-        <p>Aplicativo próprio que centraliza triagem de candidatos, acompanhamento de processos seletivos e gestão de talentos com apoio de IA — do primeiro contato à decisão de contratação.</p>
-        <div class="case-client">Produto próprio · Vitalis</div>
+        <div class="case-metric-label" data-i18n="case1-label">plataforma própria de recrutamento e gestão de RH</div>
+        <h4 data-i18n="case1-title">TalentIQ — copiloto de recrutamento</h4>
+        <p data-i18n="case1-desc">Aplicativo próprio que centraliza triagem de candidatos, acompanhamento de processos seletivos e gestão de talentos com apoio de IA — do primeiro contato à decisão de contratação.</p>
+        <div class="case-client" data-i18n="case1-client">Produto próprio · Vitalis</div>
       </div>
 
       <div class="case">
-        <div class="case-tag">Seguros · Prevenção a Fraude</div>
+        <div class="case-tag" data-i18n="case2-tag">Seguros · Prevenção a Fraude</div>
         <div class="case-metric" style="font-size: 44px;"><em>Health Guard</em></div>
-        <div class="case-metric-label">despiste de sinais de fraude em seguros de saúde</div>
-        <h4>Health Guard — detecção de fraude</h4>
-        <p>Analisa sinistros e padrões de utilização para sinalizar indícios de fraude em seguros de saúde antes do pagamento, priorizando casos para investigação humana.</p>
-        <div class="case-client">Produto próprio · Vitalis</div>
+        <div class="case-metric-label" data-i18n="case2-label">despiste de sinais de fraude em seguros de saúde</div>
+        <h4 data-i18n="case2-title">Health Guard — detecção de fraude</h4>
+        <p data-i18n="case2-desc">Analisa sinistros e padrões de utilização para sinalizar indícios de fraude em seguros de saúde antes do pagamento, priorizando casos para investigação humana.</p>
+        <div class="case-client" data-i18n="case2-client">Produto próprio · Vitalis</div>
       </div>
 
       <div class="case">
-        <div class="case-tag">Saúde Pública · Supervisão Programática</div>
+        <div class="case-tag" data-i18n="case3-tag">Saúde Pública · Supervisão Programática</div>
         <div class="case-metric" style="font-size: 44px;"><em>SIGA-ICT</em></div>
-        <div class="case-metric-label">painel de supervisão em tempo real</div>
-        <h4>SIGA-ICT — apoio à supervisão programática</h4>
-        <p>Mostra em tempo real quantas supervisões foram realizadas no programa e onde estão as prioridades, dando ao gestor visibilidade imediata para direcionar a equipe em campo.</p>
-        <div class="case-client">Programa de saúde pública</div>
+        <div class="case-metric-label" data-i18n="case3-label">painel de supervisão em tempo real</div>
+        <h4 data-i18n="case3-title">SIGA-ICT — apoio à supervisão programática</h4>
+        <p data-i18n="case3-desc">Mostra em tempo real quantas supervisões foram realizadas no programa e onde estão as prioridades, dando ao gestor visibilidade imediata para direcionar a equipe em campo.</p>
+        <div class="case-client" data-i18n="case3-client">Programa de saúde pública</div>
       </div>
 
       <div class="case">
-        <div class="case-tag">Dados · Busca Inteligente</div>
+        <div class="case-tag" data-i18n="case4-tag">Dados · Busca Inteligente</div>
         <div class="case-metric" style="font-size: 44px;"><em>RAG</em></div>
-        <div class="case-metric-label">acesso em tempo real aos documentos da organização</div>
-        <h4>Sistema RAG para documentos internos</h4>
-        <p>Permite consultar, em linguagem natural, toda a base documental da organização — políticas, contratos, relatórios — com respostas ancoradas nas fontes originais em tempo real.</p>
-        <div class="case-client">Produto próprio · Vitalis</div>
+        <div class="case-metric-label" data-i18n="case4-label">acesso em tempo real aos documentos da organização</div>
+        <h4 data-i18n="case4-title">Sistema RAG para documentos internos</h4>
+        <p data-i18n="case4-desc">Permite consultar, em linguagem natural, toda a base documental da organização — políticas, contratos, relatórios — com respostas ancoradas nas fontes originais em tempo real.</p>
+        <div class="case-client" data-i18n="case4-client">Produto próprio · Vitalis</div>
       </div>
     </div>
   </div>
@@ -1051,54 +1075,54 @@
   <div class="wrap">
     <div class="sec-head" style="grid-template-columns: 1fr; text-align: center; max-width: 640px; margin-inline: auto;">
       <div>
-        <span class="eyebrow" style="justify-content: center;">Perguntas frequentes</span>
-        <h2>Ainda em dúvida?</h2>
+        <span class="eyebrow" style="justify-content: center;" data-i18n="faq-eyebrow">Perguntas frequentes</span>
+        <h2 data-i18n="faq-h2">Ainda em dúvida?</h2>
       </div>
     </div>
 
     <div class="faq-wrap">
       <div class="faq-item open">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Quanto tempo leva para ver o primeiro resultado?</span>
+          <span data-i18n="faq1-q">Quanto tempo leva para ver o primeiro resultado?</span>
           <span class="plus">+</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n="faq1-a">
           Em média, 30 dias. A fase de descoberta dura uma semana; a prova de valor, duas a três. Se o caso não gerar resultado mensurável nesse prazo, a gente não segue — e você não paga a fase seguinte.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Vocês atendem PMEs ou só grandes empresas?</span>
+          <span data-i18n="faq2-q">Vocês atendem PMEs ou só grandes empresas?</span>
           <span class="plus">+</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n="faq2-a">
           Os dois. Temos pacotes de entrada pensados para PMEs — chatbot, automação pontual, consultoria de 4 semanas — e projetos longos para operações enterprise com governança, LGPD e SLA dedicado.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Como funciona a segurança dos meus dados?</span>
+          <span data-i18n="faq3-q">Como funciona a segurança dos meus dados?</span>
           <span class="plus">+</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n="faq3-a">
           Trabalhamos com contratos de confidencialidade, DPA e opção de infraestrutura dedicada. Modelos customizados podem rodar no seu próprio cloud — AWS, Azure ou GCP — com dado nunca deixando o perímetro.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Qual o modelo de cobrança?</span>
+          <span data-i18n="faq4-q">Qual o modelo de cobrança?</span>
           <span class="plus">+</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n="faq4-a">
           Consultoria por hora ou pacote fechado; automações e agentes por projeto + mensalidade de sustentação. SaaS próprio da Vitalis por assinatura. Sempre com escopo claro antes da assinatura.
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Vocês substituem meu time de tecnologia?</span>
+          <span data-i18n="faq5-q">Vocês substituem meu time de tecnologia?</span>
           <span class="plus">+</span>
         </button>
-        <div class="faq-a">
+        <div class="faq-a" data-i18n="faq5-a">
           Não. A gente entra como parceiro do seu time — transferindo conhecimento, documentação e código. Se você preferir, entregamos e saímos; se quiser evolução contínua, seguimos juntos.
         </div>
       </div>
@@ -1111,13 +1135,13 @@
   <div class="wrap">
     <div class="contact-grid">
       <div>
-        <span class="eyebrow">Vamos conversar</span>
-        <h2>Uma demo <em>vale</em> mais que mil promessas.</h2>
-        <p>Em 30 minutos mostramos casos parecidos com o seu e desenhamos um piloto viável. Se não fizer sentido, a gente fala isso na cara — de graça.</p>
+        <span class="eyebrow" data-i18n="contact-eyebrow">Vamos conversar</span>
+        <h2 data-i18n="contact-h2">Uma demo <em>vale</em> mais que mil promessas.</h2>
+        <p data-i18n="contact-p">Em 30 minutos mostramos casos parecidos com o seu e desenhamos um piloto viável. Se não fizer sentido, a gente fala isso na cara — de graça.</p>
         <div class="contact-alt">
           <a href="https://wa.me/258835160545">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            WhatsApp direto
+            <span data-i18n="contact-whatsapp-label">WhatsApp direto</span>
           </a>
           <a href="mailto:consulting@vitalis-solutions.org">consulting@vitalis-solutions.org</a>
         </div>
@@ -1128,21 +1152,21 @@
         <input type="hidden" name="subject" value="Novo pedido de demo — Vitalis">
         <div class="form-row">
           <div class="field">
-            <label>Nome</label>
-            <input type="text" name="nome" placeholder="Seu nome" required>
+            <label data-i18n="form-label-name">Nome</label>
+            <input type="text" name="nome" placeholder="Seu nome" required data-i18n-placeholder="placeholder-name">
           </div>
           <div class="field">
-            <label>Empresa</label>
-            <input type="text" name="empresa" placeholder="Sua empresa" required>
+            <label data-i18n="form-label-company">Empresa</label>
+            <input type="text" name="empresa" placeholder="Sua empresa" required data-i18n-placeholder="placeholder-company">
           </div>
         </div>
         <div class="form-row">
           <div class="field">
-            <label>Email corporativo</label>
-            <input type="email" name="email" placeholder="voce@empresa.com" required>
+            <label data-i18n="form-label-email">Email corporativo</label>
+            <input type="email" name="email" placeholder="voce@empresa.com" required data-i18n-placeholder="placeholder-email">
           </div>
           <div class="field">
-            <label>Tamanho do time</label>
+            <label data-i18n="form-label-teamsize">Tamanho do time</label>
             <select name="tamanho_time">
               <option>1–10</option>
               <option>11–50</option>
@@ -1153,12 +1177,12 @@
           </div>
         </div>
         <div class="field full">
-          <label>O que você quer resolver?</label>
-          <textarea name="mensagem" placeholder="Ex: automatizar atendimento no WhatsApp, extrair dados de contratos, análise de vendas..."></textarea>
+          <label data-i18n="form-label-message">O que você quer resolver?</label>
+          <textarea name="mensagem" placeholder="Ex: automatizar atendimento no WhatsApp, extrair dados de contratos, análise de vendas..." data-i18n-placeholder="placeholder-message"></textarea>
         </div>
         <div class="form-submit">
-          <p class="fine">Ao enviar você concorda com nossa política de privacidade e LGPD.</p>
-          <button type="submit" class="btn warm">
+          <p class="fine" data-i18n="contact-fine">Ao enviar você concorda com nossa política de privacidade e LGPD.</p>
+          <button type="submit" class="btn warm" data-i18n="btn-cta">
             Agendar demo
             <span class="arrow">→</span>
           </button>
@@ -1176,13 +1200,13 @@
       Vitalis
     </div>
     <div class="foot-links">
-      <a href="#services">Soluções</a>
-      <a href="#process">Processo</a>
-      <a href="#cases">Casos</a>
+      <a href="#services" data-i18n="nav-services">Soluções</a>
+      <a href="#process" data-i18n="nav-process">Processo</a>
+      <a href="#cases" data-i18n="nav-cases">Casos</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact">Contato</a>
+      <a href="#contact" data-i18n="nav-contact">Contato</a>
     </div>
-    <div>© 2026 Vitalis · Soluções de IA</div>
+    <div data-i18n="footer-copyright">© 2026 Vitalis · Soluções de IA</div>
   </div>
 </footer>
 
@@ -1223,6 +1247,149 @@
       btn.innerHTML = originalBtn;
     }
   });
+
+  // ---- Language toggle (PT / EN) ----
+  const translations = {
+    en: {
+      "title": "Vitalis — AI Solutions for Business",
+      "nav-about": "About us",
+      "nav-services": "Solutions",
+      "nav-process": "Process",
+      "nav-cases": "Case studies",
+      "nav-contact": "Contact",
+      "nav-cta": 'Book a demo →',
+      "btn-cta": 'Book a demo <span class="arrow">→</span>',
+      "hero-eyebrow": "Vitalis · AI Solutions",
+      "hero-title": 'Artificial intelligence that <em>works</em> for your business.',
+      "hero-sub": "From custom SaaS to process automation: we deliver agents, integrations and models that cut operating costs and free your team to focus on what matters.",
+      "hero-whatsapp-btn": "Chat on WhatsApp",
+      "chat-msg1": "My order #48213 still hasn't arrived.",
+      "chat-msg2": "Found your order. It left the warehouse on Jul 11 and arrives by Wednesday. Want me to track it and notify you on WhatsApp?",
+      "chat-msg3": "Yes, please.",
+      "chat-msg4": "Done. Notification set up. Anything else?",
+      "about-eyebrow": "About us",
+      "about-h2": 'AI built by people who\'ve already <em>built</em> systems that matter.',
+      "about-p": "Vitalis grew out of a team that had already led large, complex real-world projects long before working with AI. Today we apply that same hands-on experience to designing artificial intelligence solutions that solve real problems — not just technology for its own sake, but something that works in your business day to day, whatever your sector.",
+      "about-stat1-label": "years of experience leading teams and large-scale projects",
+      "about-stat2-label": "managed across international programs, with direct accountability for results",
+      "services-eyebrow": "Solutions",
+      "services-h2": 'Six fronts, <em>one</em> partner.',
+      "services-p": "We combine consulting, engineering and our own products to design the right solution — from a chatbot serving thousands of people to a custom model trained on your private data.",
+      "svc1-title": "Chatbots and conversational agents",
+      "svc1-desc": "24/7 support on WhatsApp, your website and app, with flows that actually solve problems — not just push everything to a human.",
+      "svc2-title": "Process automation (RPA + AI)",
+      "svc2-desc": "Smart bots that read documents, fill in systems and trigger actions — in minutes, without manual work.",
+      "svc3-title": "Data analysis and AI-powered dashboards",
+      "svc3-desc": "Dashboards that answer questions in plain language. Ask, spot patterns, act on the data.",
+      "svc4-title": "Strategic AI consulting",
+      "svc4-desc": "Diagnosis, roadmap and prioritization. Where AI creates real value for your business — and where it doesn't.",
+      "svc5-title": "Custom models and fine-tuning",
+      "svc5-desc": "We train AI models on your own private data, with access control, versioning and ongoing evaluation.",
+      "svc6-title": "Integrations with OpenAI, Anthropic and other tools",
+      "svc6-desc": "We connect the best AI models to your existing systems — CRM, ERP, WhatsApp, Slack, whatever you need.",
+      "process-eyebrow": "How it works",
+      "process-h2": 'From <em>discovery</em> to pilot in 30 days.',
+      "process-p": "A lean, no-nonsense method. We only move to the next phase once the previous one has delivered measurable value.",
+      "step1-title": "Discovery",
+      "step1-desc": "One week. We map your processes, available data and where AI can create real, measurable value.",
+      "step2-title": "Proof of value",
+      "step2-desc": "We pick one use case and deliver a working pilot in two to three weeks.",
+      "step3-title": "Production",
+      "step3-desc": "We integrate into your systems with proper monitoring, cost control and data safeguards.",
+      "step4-title": "Ongoing improvement",
+      "step4-desc": "Monthly cycles of continuous improvement. New use cases join the roadmap once value is proven.",
+      "cases-eyebrow": "Case studies",
+      "cases-h2": 'Results, <em>not</em> hype.',
+      "cases-p": "Four real projects, four different fields, one thing in common: business impact you can point to.",
+      "case1-tag": "HR · Recruitment & People Management",
+      "case1-label": "our own recruitment and HR management platform",
+      "case1-title": "TalentIQ — a recruitment copilot",
+      "case1-desc": "Our own app that brings together candidate screening, hiring pipeline tracking and talent management with AI support — from first contact to hiring decision.",
+      "case1-client": "Own product · Vitalis",
+      "case2-tag": "Insurance · Fraud Prevention",
+      "case2-label": "an app for spotting signs of health insurance fraud",
+      "case2-title": "Health Guard — fraud detection",
+      "case2-desc": "Reviews claims and usage patterns to flag possible signs of health insurance fraud before payout, so human investigators can prioritize the right cases.",
+      "case2-client": "Own product · Vitalis",
+      "case3-tag": "Public Health · Program Supervision",
+      "case3-label": "a real-time supervision dashboard",
+      "case3-title": "SIGA-ICT — supporting program supervision",
+      "case3-desc": "Shows in real time how many supervision visits have been completed and where the priorities are, giving managers immediate visibility to guide field teams.",
+      "case3-client": "Public health program",
+      "case4-tag": "Data · Smart Search",
+      "case4-label": "real-time access to the organization's documents",
+      "case4-title": "A RAG system for internal documents",
+      "case4-desc": "Lets people search, in plain language, an organization's entire document library — policies, contracts, reports — with answers grounded in the original sources in real time.",
+      "case4-client": "Own product · Vitalis",
+      "faq-eyebrow": "Frequently asked questions",
+      "faq-h2": "Still have questions?",
+      "faq1-q": "How long until we see the first result?",
+      "faq1-a": "On average, 30 days. Discovery takes one week; proving value takes two to three. If a use case doesn't produce a measurable result in that time, we don't move forward — and you don't pay for the next phase.",
+      "faq2-q": "Do you work with small businesses, or only large companies?",
+      "faq2-a": "Both. We have entry-level packages built for smaller businesses — a chatbot, a targeted automation, a 4-week consulting engagement — as well as longer projects for enterprise operations, with governance, data protection and a dedicated service agreement.",
+      "faq3-q": "How do you keep my data secure?",
+      "faq3-a": "We work with confidentiality agreements, data processing agreements, and the option of dedicated infrastructure. Custom models can run in your own cloud environment — AWS, Azure or GCP — with your data never leaving your perimeter.",
+      "faq4-q": "How does pricing work?",
+      "faq4-a": "Hourly or fixed-scope consulting; automations and agents are billed per project plus an ongoing support fee. Vitalis's own products are subscription-based. Always with a clear scope agreed before you sign anything.",
+      "faq5-q": "Will you replace my technology team?",
+      "faq5-a": "No. We come in as a partner to your team — sharing knowledge, documentation and code as we go. If you'd rather we deliver and step back, we can; if you want continuous support, we stay on with you.",
+      "contact-eyebrow": "Let's talk",
+      "contact-h2": 'A demo is <em>worth</em> more than a thousand promises.',
+      "contact-p": "In 30 minutes we'll walk you through cases similar to yours and sketch out a workable pilot. If it doesn't make sense for you, we'll say so honestly — for free.",
+      "contact-whatsapp-label": "Chat on WhatsApp",
+      "form-label-name": "Name",
+      "form-label-company": "Company",
+      "form-label-email": "Work email",
+      "form-label-teamsize": "Team size",
+      "form-label-message": "What would you like to solve?",
+      "placeholder-name": "Your name",
+      "placeholder-company": "Your company",
+      "placeholder-email": "you@company.com",
+      "placeholder-message": "E.g.: automate WhatsApp support, extract data from contracts, sales analysis...",
+      "contact-fine": "By submitting this form you agree to our privacy policy and applicable data protection rules.",
+      "footer-copyright": "© 2026 Vitalis · AI Solutions"
+    }
+  };
+
+  (function () {
+    const originalTitle = document.title;
+    const els = Array.from(document.querySelectorAll('[data-i18n]'));
+    const originals = els.map(el => el.innerHTML);
+    const phEls = Array.from(document.querySelectorAll('[data-i18n-placeholder]'));
+    const originalPh = phEls.map(el => el.getAttribute('placeholder'));
+
+    function applyLang(lang) {
+      if (lang === 'en') {
+        els.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations.en[key] !== undefined) el.innerHTML = translations.en[key];
+        });
+        phEls.forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (translations.en[key] !== undefined) el.setAttribute('placeholder', translations.en[key]);
+        });
+        document.title = translations.en['title'];
+        document.documentElement.lang = 'en';
+      } else {
+        els.forEach((el, i) => { el.innerHTML = originals[i]; });
+        phEls.forEach((el, i) => { el.setAttribute('placeholder', originalPh[i]); });
+        document.title = originalTitle;
+        document.documentElement.lang = 'pt-BR';
+      }
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      try { localStorage.setItem('vitalis-lang', lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+    });
+
+    let saved = 'pt';
+    try { saved = localStorage.getItem('vitalis-lang') || 'pt'; } catch (e) {}
+    if (saved === 'en') applyLang('en');
+  })();
 </script>
 
 </body>
