@@ -1124,6 +1124,8 @@
       </div>
 
       <form class="form" id="contact-form">
+        <input type="hidden" name="access_key" value="9775a388-2f87-4a77-9fa2-979a917d1cb5">
+        <input type="hidden" name="subject" value="Novo pedido de demo — Vitalis">
         <div class="form-row">
           <div class="field">
             <label>Nome</label>
@@ -1191,13 +1193,35 @@
     item.classList.toggle('open');
   }
 
-  // Contact form — placeholder handler.
-  // Replace this with a real submit target before launch: e.g. point the <form>
-  // at a Formspree/Web3Forms endpoint, or add a Vercel serverless function
-  // under /api that emails you the submission.
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
+  // Contact form — submits to Web3Forms, which emails the submission to
+  // consulting@vitalis-solutions.org. No backend of our own required.
+  document.getElementById('contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();
-    alert('Obrigado! Entraremos em contato em breve.');
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const originalBtn = btn.innerHTML;
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      const result = await res.json();
+      if (result.success) {
+        alert('Obrigado! Entraremos em contato em breve.');
+        form.reset();
+      } else {
+        alert('Não foi possível enviar agora. Tente novamente ou fale connosco pelo WhatsApp.');
+      }
+    } catch (err) {
+      alert('Não foi possível enviar agora. Tente novamente ou fale connosco pelo WhatsApp.');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = originalBtn;
+    }
   });
 </script>
 
