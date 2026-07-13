@@ -211,7 +211,7 @@
     overflow: hidden;
   }
   .mock-card.main {
-    inset: 6% 8% 16% 0;
+    inset: 8% 4% 8% 4%;
   }
   .mock-card.side {
     right: 0; bottom: 0;
@@ -348,6 +348,31 @@
     font-size: 16.5px;
     margin: 0;
     text-wrap: pretty;
+  }
+
+  /* ============ ABOUT ============ */
+  section.about { padding-block: var(--section-y); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 8px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .about-stat strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .about-stat span {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.5;
   }
 
   /* ============ SERVICES ============ */
@@ -740,6 +765,7 @@
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .process-grid { grid-template-columns: repeat(2, 1fr); }
     .cases-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 24px; }
     .navlinks .navlink { display: none; }
   }
   @media (max-width: 560px) {
@@ -760,6 +786,7 @@
       Vitalis
     </a>
     <div class="navlinks">
+      <a href="#about" class="navlink">Quem somos</a>
       <a href="#services" class="navlink">Soluções</a>
       <a href="#process" class="navlink">Processo</a>
       <a href="#cases" class="navlink">Casos</a>
@@ -786,24 +813,10 @@
             Agendar demo
             <span class="arrow">→</span>
           </a>
-          <a href="https://wa.me/5511999999999" class="btn ghost">
+          <a href="https://wa.me/258835160545" class="btn ghost">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
             Falar no WhatsApp
           </a>
-        </div>
-        <div class="hero-meta">
-          <div>
-            <strong>+40</strong>
-            projetos entregues
-          </div>
-          <div>
-            <strong>3.2M</strong>
-            interações/mês processadas
-          </div>
-          <div>
-            <strong>68%</strong>
-            redução média de custo
-          </div>
         </div>
       </div>
 
@@ -842,26 +855,30 @@
           </div>
         </div>
 
-        <!-- Side metrics card -->
-        <div class="mock-card side">
-          <div class="mock-header" style="border-color: rgba(250,250,247,0.12)">
-            <span class="mock-title" style="color: rgba(250,250,247,0.5)">Volume · 7d</span>
-            <span class="mock-dot"></span>
-          </div>
-          <div class="mock-metric-row">
-            <div class="mock-metric-label">Resolvidos<br>sem humano</div>
-            <div class="mock-metric-val">82%<small>↑ 14%</small></div>
-          </div>
-          <div class="mock-bars">
-            <i style="height: 40%"></i>
-            <i style="height: 55%"></i>
-            <i style="height: 32%"></i>
-            <i style="height: 70%" class="hi"></i>
-            <i style="height: 62%"></i>
-            <i style="height: 85%" class="hi"></i>
-            <i style="height: 78%" class="hi"></i>
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Quem somos</span>
+        <h2>IA construída por quem já <em>construiu</em> sistemas que importam.</h2>
+      </div>
+      <p>A Vitalis nasceu de uma equipa que já liderou projectos grandes e complexos no mundo real, muito antes de trabalhar com IA. Hoje aplicamos essa mesma experiência prática para desenhar soluções de inteligência artificial que resolvem problemas de verdade — não apenas tecnologia por tecnologia, mas algo que funciona no dia a dia do seu negócio, seja qual for o seu sector.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-stat">
+        <strong>25+</strong>
+        <span>anos de experiência a liderar equipas e projectos de grande escala</span>
+      </div>
+      <div class="about-stat">
+        <strong>US$100M+</strong>
+        <span>geridos em programas internacionais, com responsabilidade directa pelos resultados</span>
       </div>
     </div>
   </div>
@@ -950,7 +967,7 @@
         <span class="eyebrow">Como funciona</span>
         <h2>Do <em>diagnóstico</em> ao piloto em 30 dias.</h2>
       </div>
-      <p>Método enxuto e sem venda de fumaça. A gente só avança de fase quando a anterior gerou valor mensurável.</p>
+      <p>Método robusto e sem venda de fumaça. A gente só avança de fase quando a anterior gerou valor mensurável.</p>
     </div>
 
     <div class="process-grid">
@@ -1098,11 +1115,11 @@
         <h2>Uma demo <em>vale</em> mais que mil promessas.</h2>
         <p>Em 30 minutos mostramos casos parecidos com o seu e desenhamos um piloto viável. Se não fizer sentido, a gente fala isso na cara — de graça.</p>
         <div class="contact-alt">
-          <a href="https://wa.me/5511999999999">
+          <a href="https://wa.me/258835160545">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
             WhatsApp direto
           </a>
-          <a href="mailto:contato@vitalis.ai">contato@vitalis.ai</a>
+          <a href="mailto:consulting@vitalis-solutions.org">consulting@vitalis-solutions.org</a>
         </div>
       </div>
 
