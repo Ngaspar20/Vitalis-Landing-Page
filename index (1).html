@@ -1,0 +1,1554 @@
+<!doctype html>
+<html lang="pt-MZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vitalis — Reduza custos e aumente a eficiência com IA</title>
+<meta name="description" content="A Vitalis ajuda empresas a utilizar inteligência artificial para reduzir custos, aumentar a eficiência, melhorar decisões e obter maior retorno das suas operações.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vitalis — Reduza custos e aumente a eficiência com IA">
+<meta property="og:description" content="Soluções de inteligência artificial para reduzir custos, aumentar a eficiência e melhorar a rentabilidade das operações.">
+<meta property="og:image" content="https://vitalis-landing-page.vercel.app/og-image.png">
+<meta property="og:url" content="https://vitalis-landing-page.vercel.app">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vitalis — Reduza custos e aumente a eficiência com IA">
+<meta name="twitter:description" content="Soluções de inteligência artificial para reduzir custos, aumentar a eficiência e melhorar a rentabilidade das operações.">
+<meta name="twitter:image" content="https://vitalis-landing-page.vercel.app/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* Palette */
+    --bg: #fafaf7;
+    --bg-alt: #f2efe8;
+    --bg-card: #ffffff;
+    --ink: #0f1512;
+    --ink-2: #3a4340;
+    --ink-3: #6b736f;
+    --line: #e6e2d8;
+    --line-strong: #d3cec1;
+    --accent: oklch(48% 0.09 178);      /* deep teal */
+    --accent-soft: oklch(94% 0.03 178);  /* washed teal */
+    --accent-ink: oklch(28% 0.06 178);
+    --warm: oklch(88% 0.05 75);          /* soft cream accent */
+
+    /* Type */
+    --serif: 'Instrument Serif', 'Times New Roman', serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Rhythm */
+    --pad-x: clamp(20px, 4vw, 72px);
+    --section-y: clamp(64px, 8vw, 112px);
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-inline: var(--pad-x);
+  }
+
+  /* ============ NAV ============ */
+  nav.top {
+    position: sticky; top: 0; z-index: 40;
+    background: color-mix(in oklch, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.top .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--serif);
+    font-size: 26px;
+    letter-spacing: -0.01em;
+  }
+  .brand .mark {
+    width: 26px; height: 26px; border-radius: 7px;
+    background: var(--ink);
+    display: grid; place-items: center;
+    color: var(--bg);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1;
+    padding-bottom: 2px;
+  }
+  .navlinks {
+    display: flex; align-items: center; gap: 28px;
+    font-size: 14.5px;
+    color: var(--ink-2);
+  }
+  .navlinks a:hover { color: var(--ink); }
+  .navlinks .cta { margin-left: 12px; }
+  .lang-toggle {
+    display: flex; align-items: center; gap: 6px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.03em;
+    margin-left: 4px;
+  }
+  .lang-btn {
+    background: none; border: none; cursor: pointer;
+    color: var(--ink-3); font: inherit; padding: 4px 2px;
+    transition: color .2s ease;
+  }
+  .lang-btn.active { color: var(--ink); font-weight: 700; }
+  .lang-btn:hover { color: var(--ink); }
+  .lang-sep { color: var(--line-strong); }
+
+  /* ============ BUTTONS ============ */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-size: 14.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.primary {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn.primary:hover { background: var(--accent-ink); }
+  .btn.ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+  }
+  .btn.ghost:hover { border-color: var(--ink); }
+  .btn.link {
+    padding: 0;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    border-radius: 0;
+  }
+  .btn .arrow { transition: transform .2s ease; }
+  .btn:hover .arrow { transform: translateX(2px); }
+
+  /* ============ EYEBROW / TAGS ============ */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .eyebrow::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ============ HERO ============ */
+  section.hero {
+    padding-top: clamp(48px, 6vw, 80px);
+    padding-bottom: var(--section-y);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+  }
+  h1.hero-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(48px, 6.4vw, 92px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin: 22px 0 0;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  h1.hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--ink-2);
+    max-width: 500px;
+    text-wrap: pretty;
+  }
+  .hero-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .hero-benefit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    color: var(--ink-2);
+    font-size: 13px;
+    font-weight: 500;
+    background: color-mix(in oklch, var(--bg-card) 72%, transparent);
+  }
+  .hero-benefit::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .hero-cta {
+    margin-top: 32px;
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex; gap: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+  .hero-meta strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  /* Hero visual — dashboard/agent mock */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 5 / 6;
+    max-height: 640px;
+  }
+  .mock-card {
+    position: absolute;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 24px 60px -30px rgba(15,21,18,0.25), 0 1px 0 rgba(15,21,18,0.03);
+    padding: 20px;
+    overflow: hidden;
+  }
+  .mock-card.main {
+    inset: 8% 4% 8% 4%;
+  }
+  .mock-card.side {
+    right: 0; bottom: 0;
+    width: 62%;
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .mock-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 14px; border-bottom: 1px solid var(--line);
+    margin-bottom: 16px;
+  }
+  .mock-title {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .mock-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .chat-row { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
+  .chat-avatar {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--bg-alt); flex-shrink: 0;
+    display: grid; place-items: center;
+    font-family: var(--serif); font-size: 13px;
+    color: var(--ink-2);
+  }
+  .chat-avatar.ai { background: var(--accent); color: white; }
+  .chat-bubble {
+    background: var(--bg-alt);
+    padding: 8px 12px; border-radius: 10px;
+    font-size: 12.5px; line-height: 1.4;
+    color: var(--ink);
+    max-width: 82%;
+  }
+  .chat-bubble.ai { background: var(--accent-soft); }
+  .chat-typing {
+    display: inline-flex; gap: 3px; padding: 4px 0;
+  }
+  .chat-typing span {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--ink-3);
+    animation: pulse 1.2s infinite;
+  }
+  .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+  .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes pulse {
+    0%, 60%, 100% { opacity: 0.3; }
+    30% { opacity: 1; }
+  }
+
+  .mock-metric-row {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 14px;
+  }
+  .mock-metric-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(250,250,247,0.5);
+  }
+  .mock-metric-val {
+    font-family: var(--serif); font-size: 40px; line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .mock-metric-val small {
+    font-family: var(--sans); font-size: 12px;
+    color: var(--accent); margin-left: 6px;
+    letter-spacing: 0;
+  }
+  .mock-bars {
+    display: flex; gap: 4px; height: 60px; align-items: flex-end;
+    margin-top: 12px;
+  }
+  .mock-bars i {
+    flex: 1;
+    background: rgba(250,250,247,0.15);
+    border-radius: 2px 2px 0 0;
+  }
+  .mock-bars i.hi { background: var(--accent); }
+
+  /* ============ LOGO STRIP ============ */
+  section.logos {
+    padding-block: clamp(32px, 4vw, 56px);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .logos-inner {
+    display: flex; align-items: center; gap: 48px;
+    flex-wrap: wrap; justify-content: space-between;
+  }
+  .logos-label {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-3);
+    flex-shrink: 0;
+  }
+  .logo-item {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--ink-2);
+    letter-spacing: -0.01em;
+    opacity: 0.72;
+  }
+  .logo-item.sans {
+    font-family: var(--sans); font-weight: 600; letter-spacing: -0.02em;
+    font-size: 18px; text-transform: uppercase;
+  }
+  .logo-item.mono {
+    font-family: var(--mono); font-size: 15px; letter-spacing: 0;
+  }
+
+  /* ============ SECTION HEADER ============ */
+  .sec-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 4vw, 64px);
+    align-items: end;
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+  .sec-head h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 4.4vw, 60px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 14px 0 0;
+    text-wrap: balance;
+  }
+  .sec-head h2 em { font-style: italic; color: var(--accent); }
+  .sec-head p {
+    color: var(--ink-2);
+    max-width: 460px;
+    font-size: 16.5px;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ============ ABOUT ============ */
+  section.about { padding-block: var(--section-y); }
+  .founder-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: center;
+    margin-top: 40px;
+    padding: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .founder-avatar {
+    width: 88px;
+    height: 88px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: var(--serif);
+    font-size: 32px;
+  }
+  .founder-role {
+    margin: 0 0 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .founder-card h3 {
+    margin: 0 0 8px;
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  .founder-bio {
+    max-width: 820px;
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 15px;
+  }
+  .founder-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 14px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--line-strong);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .founder-link:hover { border-color: var(--ink); }
+
+  /* ============ SERVICES ============ */
+  section.services { padding-block: var(--section-y); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .svc {
+    background: var(--bg-card);
+    padding: 32px 28px 28px;
+    display: flex; flex-direction: column;
+    min-height: 260px;
+    transition: background .2s ease;
+    position: relative;
+  }
+  .svc:hover { background: color-mix(in oklch, var(--accent-soft) 40%, var(--bg-card)); }
+  .svc-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--ink-3);
+    margin-bottom: 20px;
+  }
+  .svc-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: var(--bg-alt);
+    display: grid; place-items: center;
+    margin-bottom: 20px;
+    color: var(--accent-ink);
+  }
+  .svc h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 26px;
+    letter-spacing: -0.015em;
+    margin: 0 0 8px;
+    line-height: 1.1;
+  }
+  .svc p {
+    font-size: 14.5px;
+    color: var(--ink-2);
+    margin: 0;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .svc-arrow {
+    margin-top: 20px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-3);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .svc:hover .svc-arrow { color: var(--accent); }
+
+  /* ============ PROCESS ============ */
+  section.process {
+    padding-block: var(--section-y);
+    background: var(--bg-alt);
+  }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    counter-reset: step;
+  }
+  .step { counter-increment: step; }
+  .step-num {
+    font-family: var(--serif);
+    font-size: 56px;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .step-num::before {
+    content: counter(step, decimal-leading-zero);
+  }
+  .step-num::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line-strong);
+    margin-bottom: 12px;
+  }
+  .step h4 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
+  .step p {
+    font-size: 14.5px;
+    color: var(--ink-2);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ============ CASES ============ */
+  section.cases { padding-block: var(--section-y); }
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .case {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    display: flex; flex-direction: column;
+    min-height: 340px;
+  }
+  .case-tag {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 16px;
+  }
+  .case-metric {
+    font-family: var(--serif);
+    font-size: 72px;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .case-metric em { font-style: italic; color: var(--accent); }
+  .case-metric-label {
+    font-size: 13px;
+    color: var(--ink-3);
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .case h4 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .case p {
+    font-size: 14px;
+    color: var(--ink-2);
+    margin: 0 0 16px;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .case-client {
+    font-family: var(--mono); font-size: 11px;
+    color: var(--ink-3);
+    letter-spacing: 0.06em;
+  }
+
+  /* ============ FAQ ============ */
+  section.faq {
+    padding-block: var(--section-y);
+    background: var(--bg-alt);
+  }
+  .faq-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-top: 1px solid var(--line-strong);
+    padding: 24px 0;
+  }
+  .faq-item:last-child { border-bottom: 1px solid var(--line-strong); }
+  .faq-q {
+    width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    text-align: left;
+    font-family: var(--serif);
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    padding: 0;
+    gap: 20px;
+  }
+  .faq-q .plus {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: var(--sans); font-size: 18px;
+    font-weight: 300; line-height: 1;
+    transition: transform .3s ease, background .2s;
+  }
+  .faq-item.open .faq-q .plus { transform: rotate(45deg); background: var(--ink); color: var(--bg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s ease, margin .35s ease;
+    color: var(--ink-2);
+    font-size: 15.5px;
+    line-height: 1.6;
+    max-width: 640px;
+  }
+  .faq-item.open .faq-a {
+    max-height: 240px;
+    margin-top: 16px;
+  }
+
+  /* ============ CONTACT / CTA ============ */
+  section.contact {
+    padding-block: var(--section-y);
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+  .contact h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin: 14px 0 0;
+    text-wrap: balance;
+  }
+  .contact h2 em { font-style: italic; color: var(--warm); }
+  .contact p {
+    color: rgba(250,250,247,0.7);
+    margin-top: 20px;
+    font-size: 16.5px;
+    max-width: 440px;
+  }
+  .contact .eyebrow { color: rgba(250,250,247,0.6); }
+  .contact .eyebrow::before { background: var(--warm); }
+  .contact-alt {
+    margin-top: 32px;
+    display: flex; gap: 24px; flex-wrap: wrap;
+    padding-top: 24px;
+    border-top: 1px solid rgba(250,250,247,0.15);
+    font-size: 13.5px;
+  }
+  .contact-alt a {
+    color: var(--bg);
+    display: inline-flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid rgba(250,250,247,0.3);
+    padding-bottom: 2px;
+  }
+  .contact-alt a:hover { border-color: var(--warm); }
+  .copy-wrap { position: relative; display: inline-flex; align-items: center; }
+  .copy-toast {
+    position: absolute; left: 0; top: 100%; margin-top: 8px;
+    font-size: 11px; color: var(--warm); white-space: nowrap;
+    opacity: 0; transition: opacity .3s ease; pointer-events: none;
+  }
+  .copy-toast.show { opacity: 1; }
+
+  .form {
+    background: rgba(250,250,247,0.04);
+    border: 1px solid rgba(250,250,247,0.12);
+    border-radius: var(--radius);
+    padding: 32px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .field label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(250,250,247,0.55);
+    margin-bottom: 8px;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(250,250,247,0.25);
+    color: var(--bg);
+    padding: 8px 0 10px;
+    font-family: var(--sans);
+    font-size: 15px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: var(--warm);
+  }
+  .field select {
+    color-scheme: dark;
+    background-color: var(--ink);
+    cursor: pointer;
+  }
+  .field select option {
+    background: var(--bg-card);
+    color: var(--ink);
+  }
+  .field textarea { resize: none; min-height: 72px; }
+  .form .field.full { margin-bottom: 14px; }
+  .form-submit {
+    margin-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 20px;
+  }
+  .form-submit .fine {
+    font-size: 12px;
+    color: rgba(250,250,247,0.5);
+    max-width: 220px;
+  }
+  .btn.warm {
+    background: var(--warm);
+    color: var(--ink);
+  }
+  .btn.warm:hover { background: var(--bg); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding-block: 40px 32px;
+    border-top: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .foot {
+    display: grid;
+    gap: 28px;
+    font-size: 13px;
+    color: var(--ink-3);
+  }
+  .foot-main {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .foot-identity {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, auto));
+    gap: 16px 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .foot-detail { display: grid; gap: 3px; }
+  .foot-detail-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .foot-detail a, .foot-detail span:last-child { color: var(--ink-2); }
+  .foot-detail a:hover { color: var(--ink); }
+  .foot-links { display: flex; gap: 24px; }
+  .foot-links a:hover { color: var(--ink); }
+
+  /* ============ VARIATION: PRODUCT ============ */
+  body.variant-product {
+    --serif: 'Inter', sans-serif;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+  body.variant-product h1.hero-title,
+  body.variant-product .sec-head h2,
+  body.variant-product .contact h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    font-size: clamp(44px, 5.4vw, 76px);
+  }
+  body.variant-product h1.hero-title em,
+  body.variant-product .sec-head h2 em,
+  body.variant-product .contact h2 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  body.variant-product .svc h3,
+  body.variant-product .step h4,
+  body.variant-product .case h4,
+  body.variant-product .faq-q {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  body.variant-product .case-metric,
+  body.variant-product .step-num,
+  body.variant-product .hero-meta strong,
+  body.variant-product .mock-metric-val {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+  body.variant-product .brand {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    font-size: 22px;
+  }
+  body.variant-product .brand .mark {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  body.variant-product .logo-item {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    font-size: 17px;
+  }
+  body.variant-product .services-grid { border-radius: var(--radius); }
+  body.variant-product .case { border-color: var(--line-strong); }
+  body.variant-product .btn.primary { border-radius: var(--radius-sm); }
+  body.variant-product .btn.ghost { border-radius: var(--radius-sm); }
+  body.variant-product .btn.warm { border-radius: var(--radius-sm); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 960px) {
+    .hero-grid, .sec-head, .contact-grid { grid-template-columns: 1fr; }
+    .hero-visual { max-height: 480px; margin-top: 16px; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .cases-grid { grid-template-columns: 1fr; }
+    .navlinks .navlink { display: none; }
+  }
+  @media (max-width: 560px) {
+    .services-grid, .process-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-meta { gap: 20px; }
+    .form-submit { flex-direction: column; align-items: stretch; }
+    .founder-card { grid-template-columns: 1fr; }
+    .foot-identity { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="variant-editorial">
+
+<!-- ============ NAV ============ -->
+<nav class="top">
+  <div class="wrap">
+    <a href="#" class="brand">
+      <span class="mark">V</span>
+      Vitalis
+    </a>
+    <div class="navlinks">
+      <a href="#about" class="navlink" data-i18n="nav-about">Quem somos</a>
+      <a href="#services" class="navlink" data-i18n="nav-services">Soluções</a>
+      <a href="#process" class="navlink" data-i18n="nav-process">Processo</a>
+      <a href="#cases" class="navlink" data-i18n="nav-cases">Projectos</a>
+      <a href="#faq" class="navlink">FAQ</a>
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-btn active" data-lang="pt">PT</button>
+        <span class="lang-sep">/</span>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="#contact" class="btn primary cta" data-i18n="nav-cta">Agendar demonstração →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-i18n="hero-eyebrow">Soluções de IA orientadas para resultados</span>
+        <h1 class="hero-title" data-i18n="hero-title">
+          Reduza custos. Aumente a eficiência. <em>Melhore a rentabilidade.</em>
+        </h1>
+        <p class="hero-sub" data-i18n="hero-sub">
+          A Vitalis ajuda empresas a utilizar inteligência artificial para automatizar tarefas, reduzir desperdícios, melhorar decisões e obter maior retorno das suas operações.
+        </p>
+        <div class="hero-benefits" aria-label="Principais benefícios">
+          <span class="hero-benefit" data-i18n="hero-benefit1">Menores custos operacionais</span>
+          <span class="hero-benefit" data-i18n="hero-benefit2">Processos mais eficientes</span>
+          <span class="hero-benefit" data-i18n="hero-benefit3">Maior rentabilidade</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#contact" class="btn primary" data-i18n="btn-cta">
+            Agendar demonstração
+            <span class="arrow">→</span>
+          </a>
+          <a href="https://wa.me/258845160545" class="btn ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span data-i18n="hero-whatsapp-btn">Falar no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <!-- Main chat card -->
+        <div class="mock-card main">
+          <div class="mock-header">
+            <span class="mock-title">Agente · Suporte N1</span>
+            <span class="mock-dot"></span>
+          </div>
+          <div class="chat-row">
+            <div class="chat-avatar">M</div>
+            <div class="chat-bubble" data-i18n="chat-msg1">O meu pedido #48213 ainda não chegou.</div>
+          </div>
+          <div class="chat-row">
+            <div class="chat-avatar ai">V</div>
+            <div class="chat-bubble ai" data-i18n="chat-msg2">
+              Encontrei o seu pedido. Saiu do centro de distribuição a 11 de Julho e deverá chegar até quarta-feira. Pretende receber actualizações por WhatsApp?
+            </div>
+          </div>
+          <div class="chat-row">
+            <div class="chat-avatar">M</div>
+            <div class="chat-bubble" data-i18n="chat-msg3">Sim, por favor.</div>
+          </div>
+          <div class="chat-row">
+            <div class="chat-avatar ai">V</div>
+            <div class="chat-bubble ai" data-i18n="chat-msg4">
+              Concluído. A notificação foi criada. Posso ajudar em mais alguma questão?
+            </div>
+          </div>
+          <div class="chat-row">
+            <div class="chat-avatar ai">V</div>
+            <div class="chat-bubble ai">
+              <span class="chat-typing"><span></span><span></span><span></span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow" data-i18n="about-eyebrow">Quem somos</span>
+        <h2 data-i18n="about-h2">IA construída por quem já <em>construiu</em> sistemas que importam.</h2>
+      </div>
+      <p data-i18n="about-p">A Vitalis nasceu da experiência adquirida na liderança de projectos complexos e de grande escala, muito antes da adopção da inteligência artificial. Hoje aplicamos essa experiência prática ao desenvolvimento de soluções que respondem a problemas concretos e funcionam no contexto real de cada organização.</p>
+    </div>
+
+    <div class="founder-card">
+      <div class="founder-avatar" aria-hidden="true">NG</div>
+      <div>
+        <p class="founder-role" data-i18n="founder-role">Criador e Fundador da Vitalis</p>
+        <h3>Nuno Gaspar</h3>
+        <p class="founder-bio" data-i18n="founder-bio">Médico e especialista em saúde pública, com mais de 25 anos de experiência na liderança de programas, equipas e projectos de grande escala. Possui formação complementar em Ciência de Dados, Business Analytics e Inteligência Artificial. Criou a Vitalis para transformar problemas operacionais concretos em soluções digitais práticas, mensuráveis e adaptadas ao contexto africano.</p>
+        <a class="founder-link" href="https://www.linkedin.com/in/nuno-gaspar-2ab3525a/" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="founder-link">Ver perfil no LinkedIn</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow" data-i18n="services-eyebrow">Soluções</span>
+        <h2 data-i18n="services-h2">Seis frentes, <em>um</em> parceiro.</h2>
+      </div>
+      <p data-i18n="services-p">Combinamos consultoria, engenharia e produtos próprios para desenvolver a solução adequada, desde agentes de atendimento até modelos personalizados que utilizam os dados privados da organização.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="svc">
+        <div class="svc-num">01</div>
+        <div class="svc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3 data-i18n="svc1-title">Chatbots e agentes conversacionais</h3>
+        <p data-i18n="svc1-desc">Atendimento contínuo através do WhatsApp, website e aplicações, com fluxos que resolvem solicitações e reduzem a necessidade de intervenção manual.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-num">02</div>
+        <div class="svc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3 data-i18n="svc2-title">Automatização de processos (RPA + IA)</h3>
+        <p data-i18n="svc2-desc">Sistemas inteligentes que analisam documentos, preenchem plataformas e executam tarefas de forma rápida e com menor intervenção manual.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-num">03</div>
+        <div class="svc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3 data-i18n="svc3-title">Análise de dados e BI com IA</h3>
+        <p data-i18n="svc3-desc">Painéis que respondem em linguagem natural, ajudam a identificar padrões e apoiam decisões baseadas em dados.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-num">04</div>
+        <div class="svc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 data-i18n="svc4-title">Consultoria estratégica em IA</h3>
+        <p data-i18n="svc4-desc">Diagnóstico, roteiro de implementação e definição de prioridades para identificar onde a IA pode gerar resultados concretos.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-num">05</div>
+        <div class="svc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+        </div>
+        <h3 data-i18n="svc5-title">Modelos personalizados e adaptação de modelos</h3>
+        <p data-i18n="svc5-desc">Adaptamos modelos de linguagem aos dados privados da organização, com controlo de acesso, gestão de versões e avaliação contínua.</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc-num">06</div>
+        <div class="svc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3 data-i18n="svc6-title">Integrações com OpenAI, Anthropic e APIs</h3>
+        <p data-i18n="svc6-desc">Conectamos os melhores modelos ao seu stack — CRM, ERP, WhatsApp, Slack, o que precisar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow" data-i18n="process-eyebrow">Como funciona</span>
+        <h2 data-i18n="process-h2">Do <em>diagnóstico</em> ao piloto em 30 dias.</h2>
+      </div>
+      <p data-i18n="process-p">Utilizamos um método prático e orientado para resultados. Só avançamos para a fase seguinte quando a anterior demonstra valor mensurável.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="step">
+        <div class="step-num"></div>
+        <h4 data-i18n="step1-title">Descoberta</h4>
+        <p data-i18n="step1-desc">Durante uma semana, analisamos os processos, os dados disponíveis e as áreas em que a IA pode gerar retorno mensurável.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <h4 data-i18n="step2-title">Prova de valor</h4>
+        <p data-i18n="step2-desc">Escolhemos um caso de uso. Entregamos um piloto funcional em duas a três semanas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <h4 data-i18n="step3-title">Produção</h4>
+        <p data-i18n="step3-desc">Integramos a solução no seu ambiente, com monitorização, controlo de custos e políticas de gestão de dados.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <h4 data-i18n="step4-title">Evolução</h4>
+        <p data-i18n="step4-desc">Ciclos mensais de melhoria contínua. Novos casos entram no roadmap conforme o valor comprovado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASES ============ -->
+<section class="cases" id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow" data-i18n="cases-eyebrow">Soluções desenvolvidas</span>
+        <h2 data-i18n="cases-h2">Da necessidade à <em>solução.</em></h2>
+      </div>
+      <p data-i18n="cases-p">Conheça exemplos de plataformas e sistemas criados pela Vitalis para responder a problemas concretos em recursos humanos, seguros, saúde pública e gestão documental.</p>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case">
+        <div class="case-tag" data-i18n="case1-tag">RH · Recrutamento e Gestão de Pessoas</div>
+        <div class="case-metric" style="font-size: 44px;"><em>TalentIQ</em></div>
+        <div class="case-metric-label" data-i18n="case1-label">plataforma própria de recrutamento e gestão de RH</div>
+        <h4 data-i18n="case1-title">TalentIQ — copiloto de recrutamento</h4>
+        <p data-i18n="case1-desc">Aplicação própria que centraliza a triagem de candidatos, o acompanhamento dos processos de selecção e a gestão de talentos com apoio de IA, desde o primeiro contacto até à decisão de contratação.</p>
+        <div class="case-client" data-i18n="case1-client">Produto próprio · Vitalis</div>
+      </div>
+
+      <div class="case">
+        <div class="case-tag" data-i18n="case2-tag">Seguros · Prevenção a Fraude</div>
+        <div class="case-metric" style="font-size: 44px;"><em>Health Guard</em></div>
+        <div class="case-metric-label" data-i18n="case2-label">despiste de sinais de fraude em seguros de saúde</div>
+        <h4 data-i18n="case2-title">Health Guard — detecção de fraude</h4>
+        <p data-i18n="case2-desc">Analisa sinistros e padrões de utilização para sinalizar indícios de fraude em seguros de saúde antes do pagamento, priorizando casos para investigação humana.</p>
+        <div class="case-client" data-i18n="case2-client">Produto próprio · Vitalis</div>
+      </div>
+
+      <div class="case">
+        <div class="case-tag" data-i18n="case3-tag">Saúde Pública · Supervisão Programática</div>
+        <div class="case-metric" style="font-size: 44px;"><em>SIGA-ICT</em></div>
+        <div class="case-metric-label" data-i18n="case3-label">painel de supervisão em tempo real</div>
+        <h4 data-i18n="case3-title">SIGA-ICT — apoio à supervisão programática</h4>
+        <p data-i18n="case3-desc">Mostra em tempo real quantas supervisões foram realizadas no programa e onde estão as prioridades, dando ao gestor visibilidade imediata para direcionar a equipa no terreno.</p>
+        <div class="case-client" data-i18n="case3-client">Programa de saúde pública</div>
+      </div>
+
+      <div class="case">
+        <div class="case-tag" data-i18n="case4-tag">Dados · Busca Inteligente</div>
+        <div class="case-metric" style="font-size: 44px;"><em>RAG</em></div>
+        <div class="case-metric-label" data-i18n="case4-label">acesso em tempo real aos documentos da organização</div>
+        <h4 data-i18n="case4-title">Sistema RAG para documentos internos</h4>
+        <p data-i18n="case4-desc">Permite consultar, em linguagem natural, toda a base documental da organização — políticas, contratos, relatórios — com respostas ancoradas nas fontes originais em tempo real.</p>
+        <div class="case-client" data-i18n="case4-client">Produto próprio · Vitalis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head" style="grid-template-columns: 1fr; text-align: center; max-width: 640px; margin-inline: auto;">
+      <div>
+        <span class="eyebrow" style="justify-content: center;" data-i18n="faq-eyebrow">Perguntas frequentes</span>
+        <h2 data-i18n="faq-h2">Ainda em dúvida?</h2>
+      </div>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq1-q">Quanto tempo leva para ver o primeiro resultado?</span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq1-a">
+          Em média, 30 dias. A fase de descoberta dura uma semana e a prova de valor entre duas e três semanas. Se o caso não produzir um resultado mensurável nesse período, não avançamos para a fase seguinte, que não será cobrada.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq2-q">Vocês atendem PMEs ou só grandes empresas?</span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq2-a">
+          Trabalhamos com ambos os segmentos. Disponibilizamos soluções de entrada para PMEs, incluindo agentes conversacionais, automatizações específicas e consultoria, assim como projectos de maior dimensão com governação, protecção de dados e níveis de serviço definidos.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq3-q">Como funciona a segurança dos meus dados?</span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq3-a">
+          Trabalhamos com acordos de confidencialidade, acordos de tratamento de dados e opções de infraestrutura dedicada. Os modelos personalizados podem funcionar no ambiente tecnológico do cliente, incluindo AWS, Azure ou GCP, sem que os dados tenham de sair do perímetro definido.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq4-q">Qual o modelo de cobrança?</span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq4-a">
+          Prestamos consultoria por hora ou por pacote definido. As automatizações e os agentes são contratados por projecto, podendo incluir uma mensalidade de manutenção. Os produtos próprios da Vitalis funcionam através de subscrição, sempre com o âmbito e os custos acordados previamente.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq5-q">Vocês substituem a minha equipa técnica?</span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq5-a">
+          Não. Trabalhamos como parceiros da equipa do cliente, assegurando a transferência de conhecimento, documentação e código. Podemos realizar uma entrega pontual ou prestar apoio contínuo, de acordo com as necessidades da organização.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / CTA ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow" data-i18n="contact-eyebrow">Vamos conversar</span>
+        <h2 data-i18n="contact-h2">Uma demo <em>vale</em> mais que mil promessas.</h2>
+        <p data-i18n="contact-p">Numa sessão de 30 minutos, apresentamos soluções relevantes para o seu contexto e definimos um possível piloto. Seremos igualmente transparentes caso a aplicação de IA não seja adequada ao problema identificado.</p>
+        <div class="contact-alt">
+          <a href="https://wa.me/258845160545">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span data-i18n="contact-whatsapp-label">WhatsApp direto</span>
+          </a>
+          <span class="copy-wrap">
+            <a href="mailto:consulting@vitalis-solutions.org" id="email-link">consulting@vitalis-solutions.org</a>
+            <span class="copy-toast" id="email-toast">Copiado ✓</span>
+          </span>
+        </div>
+      </div>
+
+      <form class="form" id="contact-form">
+        <input type="hidden" name="access_key" value="9775a388-2f87-4a77-9fa2-979a917d1cb5">
+        <input type="hidden" name="subject" value="Novo pedido de demo — Vitalis">
+        <div class="form-row">
+          <div class="field">
+            <label data-i18n="form-label-name">Nome</label>
+            <input type="text" name="nome" placeholder="O seu nome" required data-i18n-placeholder="placeholder-name">
+          </div>
+          <div class="field">
+            <label data-i18n="form-label-company">Empresa</label>
+            <input type="text" name="empresa" placeholder="A sua empresa" required data-i18n-placeholder="placeholder-company">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label data-i18n="form-label-email">Email corporativo</label>
+            <input type="email" name="email" placeholder="nome@empresa.com" required data-i18n-placeholder="placeholder-email">
+          </div>
+          <div class="field">
+            <label data-i18n="form-label-teamsize">Tamanho da equipa</label>
+            <select name="tamanho_equipa" required>
+              <option value="" selected disabled data-i18n="form-teamsize-placeholder">Seleccione um intervalo</option>
+              <option value="1-10">1–10</option>
+              <option value="11-50">11–50</option>
+              <option value="51-200">51–200</option>
+              <option value="201-1000">201–1000</option>
+              <option value="1000+">1000+</option>
+            </select>
+          </div>
+        </div>
+        <div class="field full">
+            <label data-i18n="form-label-message">Que problema pretende resolver?</label>
+          <textarea name="mensagem" placeholder="Ex.: automatizar o atendimento no WhatsApp, extrair dados de contratos ou analisar vendas" data-i18n-placeholder="placeholder-message"></textarea>
+        </div>
+        <div class="form-submit">
+          <p class="fine" data-i18n="contact-fine">Ao enviar você concorda com a nossa política de privacidade e protecção de dados.</p>
+          <button type="submit" class="btn warm" data-i18n="btn-cta">
+            Agendar demonstração
+            <span class="arrow">→</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot">
+    <div class="foot-main">
+      <div class="brand" style="font-size: 20px;">
+        <span class="mark" style="width: 22px; height: 22px; font-size: 14px;">V</span>
+        Vitalis
+      </div>
+      <div class="foot-links">
+        <a href="#services" data-i18n="nav-services">Soluções</a>
+        <a href="#process" data-i18n="nav-process">Processo</a>
+        <a href="#cases" data-i18n="nav-cases">Projectos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" data-i18n="nav-contact">Contacto</a>
+      </div>
+      <div data-i18n="footer-copyright">© 2026 Vitalis · Soluções de IA</div>
+    </div>
+    <div class="foot-identity" aria-label="Informação institucional">
+      <div class="foot-detail">
+        <span class="foot-detail-label" data-i18n="footer-founder-label">Fundador</span>
+        <span data-i18n="footer-founder-value">Nuno Gaspar · Criador e Fundador</span>
+      </div>
+      <div class="foot-detail">
+        <span class="foot-detail-label" data-i18n="footer-location-label">Localização</span>
+        <span>Maputo, Moçambique</span>
+      </div>
+      <div class="foot-detail">
+        <span class="foot-detail-label" data-i18n="footer-contact-label">Contacto</span>
+        <a href="tel:+258845160545">+258 84 516 0545</a>
+        <a href="mailto:consulting@vitalis-solutions.org">consulting@vitalis-solutions.org</a>
+      </div>
+      <div class="foot-detail">
+        <span class="foot-detail-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/nuno-gaspar-2ab3525a/" target="_blank" rel="noopener noreferrer" data-i18n="footer-linkedin">Perfil de Nuno Gaspar ↗</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+
+  // Contact form — submits to Web3Forms, which emails the submission to
+  // consulting@vitalis-solutions.org. No backend of our own required.
+  document.getElementById('contact-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const originalBtn = btn.innerHTML;
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      const result = await res.json();
+      if (result.success) {
+        alert('Obrigado! Entraremos em contacto em breve.');
+        form.reset();
+      } else {
+        alert('Não foi possível enviar agora. Tente novamente ou fale connosco pelo WhatsApp.');
+      }
+    } catch (err) {
+      alert('Não foi possível enviar agora. Tente novamente ou fale connosco pelo WhatsApp.');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = originalBtn;
+    }
+  });
+
+  // ---- Language toggle (PT / EN) ----
+  const translations = {
+    en: {
+      "title": "Vitalis — Reduce costs and increase efficiency with AI",
+      "nav-about": "About us",
+      "nav-services": "Solutions",
+      "nav-process": "Process",
+      "nav-cases": "Projects",
+      "nav-contact": "Contact",
+      "nav-cta": 'Book a demo →',
+      "btn-cta": 'Book a demo <span class="arrow">→</span>',
+      "hero-eyebrow": "AI solutions focused on business results",
+      "hero-title": 'Reduce costs. Increase efficiency. <em>Improve profitability.</em>',
+      "hero-sub": "Vitalis helps businesses use artificial intelligence to automate tasks, reduce waste, improve decisions and achieve greater returns from their operations.",
+      "hero-benefit1": "Lower operating costs",
+      "hero-benefit2": "More efficient processes",
+      "hero-benefit3": "Greater profitability",
+      "hero-whatsapp-btn": "Chat on WhatsApp",
+      "chat-msg1": "My order #48213 still hasn't arrived.",
+      "chat-msg2": "Found your order. It left the warehouse on Jul 11 and arrives by Wednesday. Want me to track it and notify you on WhatsApp?",
+      "chat-msg3": "Yes, please.",
+      "chat-msg4": "Done. Notification set up. Anything else?",
+      "about-eyebrow": "About us",
+      "about-h2": 'AI built by people who\'ve already <em>built</em> systems that matter.',
+      "about-p": "Vitalis grew out of a team that had already led large, complex real-world projects long before working with AI. Today we apply that same hands-on experience to designing artificial intelligence solutions that solve real problems — not just technology for its own sake, but something that works in your business day to day, whatever your sector.",
+      "founder-role": "Creator and Founder of Vitalis",
+      "founder-bio": "A medical doctor and public health specialist with more than 25 years of experience leading large-scale programs, teams and projects. His background also includes Data Science, Business Analytics and Artificial Intelligence. He created Vitalis to turn concrete operational problems into practical, measurable digital solutions adapted to African markets.",
+      "founder-link": "View LinkedIn profile",
+      "services-eyebrow": "Solutions",
+      "services-h2": 'Six fronts, <em>one</em> partner.',
+      "services-p": "We combine consulting, engineering and our own products to design the right solution — from a chatbot serving thousands of people to a custom model trained on your private data.",
+      "svc1-title": "Chatbots and conversational agents",
+      "svc1-desc": "24/7 support on WhatsApp, your website and app, with flows that actually solve problems — not just push everything to a human.",
+      "svc2-title": "Process automation (RPA + AI)",
+      "svc2-desc": "Smart bots that read documents, fill in systems and trigger actions — in minutes, without manual work.",
+      "svc3-title": "Data analysis and AI-powered dashboards",
+      "svc3-desc": "Dashboards that answer questions in plain language. Ask, spot patterns, act on the data.",
+      "svc4-title": "Strategic AI consulting",
+      "svc4-desc": "Diagnosis, roadmap and prioritization. Where AI creates real value for your business — and where it doesn't.",
+      "svc5-title": "Custom models and fine-tuning",
+      "svc5-desc": "We train AI models on your own private data, with access control, versioning and ongoing evaluation.",
+      "svc6-title": "Integrations with OpenAI, Anthropic and other tools",
+      "svc6-desc": "We connect the best AI models to your existing systems — CRM, ERP, WhatsApp, Slack, whatever you need.",
+      "process-eyebrow": "How it works",
+      "process-h2": 'From <em>discovery</em> to pilot in 30 days.',
+      "process-p": "A lean, no-nonsense method. We only move to the next phase once the previous one has delivered measurable value.",
+      "step1-title": "Discovery",
+      "step1-desc": "One week. We map your processes, available data and where AI can create real, measurable value.",
+      "step2-title": "Proof of value",
+      "step2-desc": "We pick one use case and deliver a working pilot in two to three weeks.",
+      "step3-title": "Production",
+      "step3-desc": "We integrate into your systems with proper monitoring, cost control and data safeguards.",
+      "step4-title": "Ongoing improvement",
+      "step4-desc": "Monthly cycles of continuous improvement. New use cases join the roadmap once value is proven.",
+      "cases-eyebrow": "Solutions developed",
+      "cases-h2": 'From need to <em>solution.</em>',
+      "cases-p": "Explore examples of platforms and systems created by Vitalis to address concrete challenges in human resources, insurance, public health and document management.",
+      "case1-tag": "HR · Recruitment & People Management",
+      "case1-label": "our own recruitment and HR management platform",
+      "case1-title": "TalentIQ — a recruitment copilot",
+      "case1-desc": "Our own app that brings together candidate screening, hiring pipeline tracking and talent management with AI support — from first contact to hiring decision.",
+      "case1-client": "Own product · Vitalis",
+      "case2-tag": "Insurance · Fraud Prevention",
+      "case2-label": "an app for spotting signs of health insurance fraud",
+      "case2-title": "Health Guard — fraud detection",
+      "case2-desc": "Reviews claims and usage patterns to flag possible signs of health insurance fraud before payout, so human investigators can prioritize the right cases.",
+      "case2-client": "Own product · Vitalis",
+      "case3-tag": "Public Health · Program Supervision",
+      "case3-label": "a real-time supervision dashboard",
+      "case3-title": "SIGA-ICT — supporting program supervision",
+      "case3-desc": "Shows in real time how many supervision visits have been completed and where the priorities are, giving managers immediate visibility to guide field teams.",
+      "case3-client": "Public health program",
+      "case4-tag": "Data · Smart Search",
+      "case4-label": "real-time access to the organization's documents",
+      "case4-title": "A RAG system for internal documents",
+      "case4-desc": "Lets people search, in plain language, an organization's entire document library — policies, contracts, reports — with answers grounded in the original sources in real time.",
+      "case4-client": "Own product · Vitalis",
+      "faq-eyebrow": "Frequently asked questions",
+      "faq-h2": "Still have questions?",
+      "faq1-q": "How long until we see the first result?",
+      "faq1-a": "On average, 30 days. Discovery takes one week; proving value takes two to three. If a use case doesn't produce a measurable result in that time, we don't move forward — and you don't pay for the next phase.",
+      "faq2-q": "Do you work with small businesses, or only large companies?",
+      "faq2-a": "Both. We have entry-level packages built for smaller businesses — a chatbot, a targeted automation, a 4-week consulting engagement — as well as longer projects for enterprise operations, with governance, data protection and a dedicated service agreement.",
+      "faq3-q": "How do you keep my data secure?",
+      "faq3-a": "We work with confidentiality agreements, data processing agreements, and the option of dedicated infrastructure. Custom models can run in your own cloud environment — AWS, Azure or GCP — with your data never leaving your perimeter.",
+      "faq4-q": "How does pricing work?",
+      "faq4-a": "Hourly or fixed-scope consulting; automations and agents are billed per project plus an ongoing support fee. Vitalis's own products are subscription-based. Always with a clear scope agreed before you sign anything.",
+      "faq5-q": "Will you replace my technology team?",
+      "faq5-a": "No. We come in as a partner to your team — sharing knowledge, documentation and code as we go. If you'd rather we deliver and step back, we can; if you want continuous support, we stay on with you.",
+      "contact-eyebrow": "Let's talk",
+      "contact-h2": 'A demo is <em>worth</em> more than a thousand promises.',
+      "contact-p": "In 30 minutes we'll walk you through cases similar to yours and sketch out a workable pilot. If it doesn't make sense for you, we'll say so honestly — for free.",
+      "contact-whatsapp-label": "Chat on WhatsApp",
+      "form-label-name": "Name",
+      "form-label-company": "Company",
+      "form-label-email": "Work email",
+      "form-label-teamsize": "Team size",
+      "form-teamsize-placeholder": "Select a range",
+      "form-label-message": "What would you like to solve?",
+      "placeholder-name": "Your name",
+      "placeholder-company": "Your company",
+      "placeholder-email": "you@company.com",
+      "placeholder-message": "E.g.: automate WhatsApp support, extract data from contracts, sales analysis...",
+      "contact-fine": "By submitting this form you agree to our privacy policy and applicable data protection rules.",
+      "footer-founder-label": "Founder",
+      "footer-founder-value": "Nuno Gaspar · Creator and Founder",
+      "footer-location-label": "Location",
+      "footer-contact-label": "Contact",
+      "footer-linkedin": "Nuno Gaspar's profile ↗",
+      "footer-copyright": "© 2026 Vitalis · AI Solutions"
+    }
+  };
+
+  (function () {
+    const originalTitle = document.title;
+    const els = Array.from(document.querySelectorAll('[data-i18n]'));
+    const originals = els.map(el => el.innerHTML);
+    const phEls = Array.from(document.querySelectorAll('[data-i18n-placeholder]'));
+    const originalPh = phEls.map(el => el.getAttribute('placeholder'));
+
+    function applyLang(lang) {
+      if (lang === 'en') {
+        els.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations.en[key] !== undefined) el.innerHTML = translations.en[key];
+        });
+        phEls.forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (translations.en[key] !== undefined) el.setAttribute('placeholder', translations.en[key]);
+        });
+        document.title = translations.en['title'];
+        document.documentElement.lang = 'en';
+      } else {
+        els.forEach((el, i) => { el.innerHTML = originals[i]; });
+        phEls.forEach((el, i) => { el.setAttribute('placeholder', originalPh[i]); });
+        document.title = originalTitle;
+        document.documentElement.lang = 'pt-MZ';
+      }
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      try { localStorage.setItem('vitalis-lang', lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+    });
+
+    let saved = 'pt';
+    try { saved = localStorage.getItem('vitalis-lang') || 'pt'; } catch (e) {}
+    if (saved === 'en') applyLang('en');
+  })();
+
+  // Email link — copies the address to clipboard as a fallback for visitors
+  // with no default mail app configured, while still letting mailto: try first.
+  (function () {
+    const emailLink = document.getElementById('email-link');
+    const toast = document.getElementById('email-toast');
+    if (!emailLink || !toast) return;
+    emailLink.addEventListener('click', function () {
+      const email = 'consulting@vitalis-solutions.org';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).catch(function () {});
+      }
+      const isEn = document.documentElement.lang === 'en';
+      toast.textContent = isEn ? 'Copied ✓' : 'Copiado ✓';
+      toast.classList.add('show');
+      clearTimeout(toast._t);
+      toast._t = setTimeout(function () {
+        toast.classList.remove('show');
+      }, 2000);
+    });
+  })();
+</script>
+
+</body>
+</html>
